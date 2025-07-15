@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+
+<!-- Estilos css personalizados por página -->
+{% block css %}
+{% endblock %}
+
+<!-- Contenido principal de la página -->
+{% block content %}
+<div class="container-fluid cont-main">
+    <div class="row gx-0">
+        <div class="col cont-top-buttons">
+            <!-- Button to Open the Modal -->
+            <a class="btn btn-category" href="">Boton secundary</a>
+            </button>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#crearFamilia">
+                Boton primary
+            </button>
+        </div>
+    </div>
+    <div class="row gx-0">
+        <div>
+            <h1>Conceptos básicos de programación</h1>
+            <button class="btn btn-blue">Empezar</button>
+        <div>
+            <h2>1. What is an "Endpoint" in an API?</h2>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1">A
+                specific
+                version of the API
+                <label class="form-check-label" for="radio1"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">A port number
+                used
+                to connect
+                <label class="form-check-label" for="radio2"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="optradio">A URL path that responds to a request
+                <label class="form-check-label"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="optradio">The total number of available APIs
+                <label class="form-check-label"></label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Modal para registrar egreso -->
+<div class="modal fade" id="crearFamilia">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="egresoForm" action="" method="POST">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal de ejemplo</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+
+                    <div class="cont-label-input">
+                        <label for="monto">tecxto de ejemplo</label>
+                        <input type="text" id="family_name" name="family_name" required>
+                        <span class="error" id="montoError"></span>
+                    </div>
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-blue">Crear</button>
+                </div>
+            </form>
+
+            <style>
+                .error {
+                    color: red;
+                    font-size: 0.875em;
+                    display: block;
+                    margin-top: 5px;
+                }
+            </style>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- JavaScript personalizado por página -->
+{% block js %}
+<script src="{{ url_for('static', filename='js/swal-login-response.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,64 @@
+@import url('variables.css');
+
+/* GENERALES */
+body {
+    display: flex;
+    height: 100vh;
+    background-color: var(--light-gray);
+    color: var(--light-gray);
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark-gray-2);
+}
+
+/* NAVBAR */
+.navbar{
+    background-color: var(--dark-gray-3);
+    color: var(--dark-gray);
+    border-bottom: 1px solid var(--dark-gray-3);
+}
+
+/* COLUMNAS Y ROWS */
+.cont-main{
+    margin-top: 70px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.cont-top-directions{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: left;
+}
+
+.windows-name{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--dark-gray);
+    margin: 0;
+    padding: 0;
+}
+
+.direction-name{
+    font-size: 1.0em;
+    font-weight: 500;
+    color: var(--dark-gray);
+    margin: 0;
+    padding: 0;
+}
+
+.direction-icon{
+    font-size: 0.7em;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
