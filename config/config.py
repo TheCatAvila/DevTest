@@ -7,7 +7,7 @@ if not os.path.exists('./flask_sessions'):
     os.makedirs('./flask_sessions')
 
 # Carga las variables del archivo .env
-load_dotenv()  
+load_dotenv(override=True)  
 
 class Config:
 

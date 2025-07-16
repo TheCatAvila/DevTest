@@ -12,17 +12,18 @@ def create_app():
     Session(app)
 
     # Crear la base de datos y tablas si no existen
-    #DLL()
+    DLL()
 
     @app.before_request
     def make_session_permanent():
         session.permanent = True
 
     # Importar y registrar Blueprints
-    from app.routes.main import main
+    from app.routes.main_routes import main
     from app.routes.auth_routes import auth_routes
+    from app.routes.techs_routes import techs_routes
     app.register_blueprint(main)
     app.register_blueprint(auth_routes)
-
+    app.register_blueprint(techs_routes)
 
     return app

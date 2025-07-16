@@ -29,7 +29,6 @@ main{
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     flex-grow: 1;
     padding: 10px;
 }

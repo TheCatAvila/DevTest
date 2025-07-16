@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+
+<!-- Estilos css personalizados por página -->
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/techs.css') }}">
+{% endblock %}
+
+<!-- Contenido principal de la página -->
+{% block content %}
+<div class="container-fluid cont-main">
+    <div class="row gx-0">
+
+        <form action="/techs" method="POST">
+            <input name="tech" type="text">
+            <input type="submit">
+        </form>
+        <form action="/reset_game">
+            <input type="submit" value="Reset">
+        </form>
+
+        <div class="cont-techs">
+            <p>Nombre</p>
+            <p>Categoría</p>
+            <p>Tipo</p>
+            <p>Año de publicación</p>
+            <p>Paradigma/Enfoque</p>
+            <p>Empresa/Comunidad</p>
+            <p>Uso principal</p>
+        </div>
+        {% for tech in guessed_techs_data %}
+        <div class="cont-answers">
+            <p>{{ tech['name'] }}</p>
+            <p>{{ tech['category'] }}</p>
+            <p>{{ tech['type'] }}</p>
+            <p>{{ tech['release_year'] }}</p>
+            <p>{{ tech['paradigm'] }}</p>
+            <p>{{ tech['company'] }}</p>
+            <p>{{ tech['uses'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+<!-- JavaScript personalizado por página -->
+{% block js %}
+<script src="{{ url_for('static', filename='js/swal-login-response.js') }}"></script>
+{% endblock %}
