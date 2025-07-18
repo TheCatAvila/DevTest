@@ -19,13 +19,7 @@ def index():
 @main.route('/daily_tech')
 def daily_tech():
 
-    guessed_techs = session.get('guessed_techs', [])
-    guessed_techs_data = []
-    print(guessed_techs)
-    for tech in guessed_techs:
-        tech_id = Technology(name=tech).get_id_by_name()
-        tech_data = Technology(id=tech_id).get_tech_data()
-        guessed_techs_data.append(tech_data)
-        print(f"Datos de la tecnología '{tech}': {tech_data}")
+    guessed_techs_data = session.get('guessed_techs', [])
+    print(f"Guessed technologies: {guessed_techs_data}")
 
     return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data)

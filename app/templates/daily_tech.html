@@ -28,17 +28,16 @@
             <p>Empresa/Comunidad</p>
             <p>Uso principal</p>
         </div>
+
         {% for tech in guessed_techs_data %}
         <div class="cont-answers">
-            <p>{{ tech['name'] }}</p>
-            <p>{{ tech['category'] }}</p>
-            <p>{{ tech['type'] }}</p>
-            <p>{{ tech['release_year'] }}</p>
-            <p>{{ tech['paradigm'] }}</p>
-            <p>{{ tech['company'] }}</p>
-            <p>{{ tech['uses'] }}</p>
+            {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
+                {% set data = tech.comparison[key] %}
+                <p style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</p>
+            {% endfor %}
         </div>
         {% endfor %}
+
     </div>
 </div>
 {% endblock %}

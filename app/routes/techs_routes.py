@@ -14,14 +14,48 @@ def techs():
         # Obtener los datos del formulario
         tech = request.form.get("tech")
     
-    # Inicializa la lista si es la primera vez
+    # Verifica si la tecnología ingresada es la del día
+    if Technology(name=tech).verify_daily_tech():
+        print(f"La tecnología '{tech}' es la del día.")
+    else:
+        # Obtener datos de la tecnología ingresada
+        tech_obj = Technology(name=tech)
+        tech_id = tech_obj.get_id_by_name()
+        input_tech_data = Technology(id=tech_id).get_tech_data()
+
+        # Obtener datos de la tecnología del día (ej. Python)
+        daily_tech_obj = Technology(name="Python")
+        daily_tech_id = daily_tech_obj.get_id_by_name()
+        day_tech_data = Technology(id=daily_tech_id).get_tech_data()
+
+        # Diccionario para almacenar si hay coincidencia o no en cada campo
+        comparison_result = {}
+
+        # Comparar clave por clave
+        for key in input_tech_data:
+            input_value = input_tech_data[key]
+            day_value = day_tech_data.get(key)
+
+            comparison_result[key] = {
+                "input": input_value,
+                "daily": day_value,
+                "match": input_value == day_value
+            }
+
+            print(comparison_result[key])
+
+    # Inicializa la lista de adivinadas si no existe
     if 'guessed_techs' not in session:
         session['guessed_techs'] = []
-    
-    # Agrega el valor solo si no está ya en la lista
-    if tech and tech not in session['guessed_techs']:
-        session['guessed_techs'].append(tech)
-        session.modified = True  # Necesario para decirle a Flask que la sesión cambió
+
+    # Agrega solo si no está ya
+    #already_guessed = any(entry["name"] == tech for entry in session['guessed_techs'])
+    #if not already_guessed:
+    session['guessed_techs'].append({
+        "name": tech,
+        "comparison": comparison_result
+    })
+    session.modified = True
 
     return redirect('/daily_tech')
 

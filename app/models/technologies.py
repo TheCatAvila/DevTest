@@ -48,3 +48,10 @@ class Technology:
             db.execute(query, values)
             tech_data = db.fetchone()
             return tech_data if tech_data else None
+    
+    def verify_daily_tech(self):
+        """Verifica si la tecnología ingresada es la del día."""
+        if self.name == "Python":
+            return True
+        else:
+            return False
