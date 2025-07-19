@@ -20,6 +20,6 @@ def index():
 def daily_tech():
 
     guessed_techs_data = session.get('guessed_techs', [])
-    print(f"Guessed technologies: {guessed_techs_data}")
+    attempts = session.get('attempts', 0)
 
-    return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data)
+    return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts)

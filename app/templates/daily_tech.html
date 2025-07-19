@@ -18,25 +18,56 @@
         <form action="/reset_game">
             <input type="submit" value="Reset">
         </form>
-
-        <div class="cont-techs">
-            <p>Nombre</p>
-            <p>Categoría</p>
-            <p>Tipo</p>
-            <p>Año de publicación</p>
-            <p>Paradigma/Enfoque</p>
-            <p>Empresa/Comunidad</p>
-            <p>Uso principal</p>
+        <div>
+            <h3>Attempts: {{ attempts }}</h3>
         </div>
 
-        {% for tech in guessed_techs_data %}
-        <div class="cont-answers">
-            {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
+        <div class="cont-camps-ans">
+            <div class="cont-campos">
+                <p class="txt-campo">Nombre</p>
+                <p class="txt-campo">Categoría</p>
+                <p class="txt-campo">Tipo</p>
+                <p class="txt-campo">Año de publicación</p>
+                <p class="txt-campo">Paradigma/Enfoque</p>
+                <p class="txt-campo">Empresa/Comunidad</p>
+                <p class="txt-campo">Uso principal</p>
+            </div>
+
+            {% for tech in guessed_techs_data | reverse %}
+            <div class="cont-answers">
+                {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
                 {% set data = tech.comparison[key] %}
-                <p style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</p>
+                <p class="txt-answers" style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</p>
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
-        {% endfor %}
+        <br><br><br>
+        <table class="table text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Tipo</th>
+                    <th>Año de publicación</th>
+                    <th>Paradigma/Enfoque</th>
+                    <th>Empresa/Comunidad</th>
+                    <th>Uso principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tech in guessed_techs_data | reverse %}
+                <tr>
+                    {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
+                    {% set data = tech.comparison[key] %}
+                    <td style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
 
     </div>
 </div>

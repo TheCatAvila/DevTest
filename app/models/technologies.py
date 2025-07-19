@@ -51,7 +51,7 @@ class Technology:
     
     def verify_daily_tech(self):
         """Verifica si la tecnología ingresada es la del día."""
-        if self.name == "Python":
+        if self.id == 1:  
             return True
         else:
             return False
