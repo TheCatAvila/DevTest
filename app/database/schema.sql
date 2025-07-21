@@ -49,3 +49,6 @@ CREATE TABLE technologies (
     FOREIGN KEY (company_id) REFERENCES companies(id),
     FOREIGN KEY (use_id) REFERENCES uses(id)
 );
+
+ALTER TABLE technologies
+ADD COLUMN daily BOOLEAN DEFAULT FALSE;

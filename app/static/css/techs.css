@@ -23,3 +23,16 @@
 .cont-camps-ans{
     max-width: 1500px;
 }
+
+td{
+    background-color: rgb( 20, 20, 20);
+}
+
+tr{
+    border-style: none;
+    background-color: rgb( 20, 20, 20);
+}
+
+.test{
+    background-color: rgb( 20, 20, 20);
+}

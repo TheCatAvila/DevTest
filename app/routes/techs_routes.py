@@ -12,16 +12,14 @@ techs_routes = Blueprint('techs_routes', __name__)
 def techs():
     # Obtener los datos del formulario
     tech = request.form.get("tech")
+    daily_tech = Technology.get_daily_tech()
     # Instanciar el objeto ingresado y la tecnología del día
     tech_obj = Technology(name=tech)
-    daily_tech_obj = Technology(name="Python")
-    # Obtener el ID de la tecnología ingresada y la del día
     tech_id = tech_obj.get_id_by_name()
-    daily_tech_id = daily_tech_obj.get_id_by_name()
     # Obtener datos de la tecnología ingresada y la del día
     input_tech_data = Technology(id=tech_id).get_tech_data()
-    day_tech_data = Technology(id=daily_tech_id).get_tech_data()
-    
+    day_tech_data = Technology(id=daily_tech['id']).get_tech_data()
+
     # Diccionario para almacenar si hay coincidencia o no en cada campo
     comparison_result = {}
     # Comparar clave por clave
@@ -41,6 +39,9 @@ def techs():
     
     if 'attempts' not in session:
         session['attempts'] = 0
+    
+    if 'user_winner' not in session:
+        session['user_winner'] = False
 
     # Agrega solo si no está ya
     already_guessed = any(entry["name"] == tech for entry in session['guessed_techs'])
@@ -56,7 +57,7 @@ def techs():
     
     # Verifica si la tecnología ingresada es la del día
     if Technology(id=tech_id).verify_daily_tech():
-        print(f"La tecnología '{tech}' es la del día.")
+        session['user_winner'] = True
     else:
         print(f"La tecnología '{tech}' NO es la del día.")
         
@@ -66,6 +67,16 @@ def techs():
 def reset_game():
     session.pop('guessed_techs', None)
     session.pop('attempts', None)
+    session.pop('user_winner', None)
+
+    daily_tech_data = Technology.get_random_tech()
+    if daily_tech_data:
+        tech = Technology(id=daily_tech_data['id'])
+        Technology.reset_daily_tech()
+        tech.define_daily_tech()
+        print(f"La tecnología del día ha sido definida como: {tech.name}")
+
+
     return redirect('/daily_tech')
 
 

@@ -49,9 +49,50 @@ class Technology:
             tech_data = db.fetchone()
             return tech_data if tech_data else None
     
+    def define_daily_tech(self):
+        """Define la tecnología como la del día."""
+        query = "UPDATE technologies SET daily = TRUE WHERE id = %s"
+        values = (self.id,)
+        
+        with Database() as db:
+            db.execute(query, values)
+            db.commit()
+    
+    @staticmethod
+    def get_daily_tech():
+        """Obtiene los datos de la tecnología del día."""
+        query = "SELECT id FROM technologies WHERE technologies.daily = TRUE;"
+        
+        with Database() as db:
+            db.execute(query)
+            tech_data = db.fetchone()
+            return tech_data if tech_data else None
+
     def verify_daily_tech(self):
         """Verifica si la tecnología ingresada es la del día."""
-        if self.id == 1:  
-            return True
-        else:
-            return False
+        query = "SELECT daily FROM technologies WHERE id = %s"
+        values = (self.id,)
+        
+        with Database() as db:
+            db.execute(query, values)
+            result = db.fetchone()
+            return result['daily'] if result else False
+        
+    @staticmethod
+    def reset_daily_tech():
+        """Resetea la tecnología del día."""
+        query = "UPDATE technologies SET daily = FALSE"
+        
+        with Database() as db:
+            db.execute(query)
+            db.commit()
+    
+    @staticmethod
+    def get_random_tech():
+        """Obtiene una tecnología aleatoria."""
+        query = "SELECT id FROM technologies ORDER BY RAND() LIMIT 1;"
+        
+        with Database() as db:
+            db.execute(query)
+            tech_data = db.fetchone()
+            return tech_data if tech_data else None

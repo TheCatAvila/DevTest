@@ -11,38 +11,23 @@
 <div class="container-fluid cont-main">
     <div class="row gx-0">
 
-        <form action="/techs" method="POST">
-            <input name="tech" type="text">
+        {% if user_winner %}
+        <h3>Victoria</h3>
+        {% else %}
+
+        <form class="tech-form" action="/techs" method="POST">
+            <h2>Introduce la tech del día</h2>
+            <input class="inp-tech" name="tech" type="text">
             <input type="submit">
         </form>
+
+        {% endif %}
         <form action="/reset_game">
             <input type="submit" value="Reset">
         </form>
         <div>
             <h3>Attempts: {{ attempts }}</h3>
         </div>
-
-        <div class="cont-camps-ans">
-            <div class="cont-campos">
-                <p class="txt-campo">Nombre</p>
-                <p class="txt-campo">Categoría</p>
-                <p class="txt-campo">Tipo</p>
-                <p class="txt-campo">Año de publicación</p>
-                <p class="txt-campo">Paradigma/Enfoque</p>
-                <p class="txt-campo">Empresa/Comunidad</p>
-                <p class="txt-campo">Uso principal</p>
-            </div>
-
-            {% for tech in guessed_techs_data | reverse %}
-            <div class="cont-answers">
-                {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
-                {% set data = tech.comparison[key] %}
-                <p class="txt-answers" style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</p>
-                {% endfor %}
-            </div>
-            {% endfor %}
-        </div>
-        <br><br><br>
         <table class="table text-center align-middle">
             <thead class="table-dark">
                 <tr>
@@ -66,9 +51,6 @@
                 {% endfor %}
             </tbody>
         </table>
-
-
-
     </div>
 </div>
 {% endblock %}

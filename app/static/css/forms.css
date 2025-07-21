@@ -4,25 +4,25 @@ form{
 }
 
 input, select, textarea {
-    width: 100%;
-
     font-size: 0.875em;
     font-weight: 400;
     line-height: 1.5;
     appearance: none;
-    border: 1px solid #ced4da;
+    background-color: var(--dark-gray-2);
+    color: var(--variable-light-blue);
+    border: 1px solid var(--class-green);
     border-radius: 4px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     outline: none; /* Desactiva el focus predeterminado */
 }
 
 input:hover, select:hover, textarea:hover {
-    background-color: var(--light-gray);
+    background-color: rgb(20, 20, 20);
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    border-color: rgb(255, 0, 0);
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
     outline: none; /* Asegura que no haya borde extra */
 }
 
@@ -49,4 +49,21 @@ label{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+}
+
+/* TECHS */
+
+.tech-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    background-color: var(--dark-gray-2);
+}
+
+.inp-tech{
+    width: 50%;
+    height: 50px;
 }
