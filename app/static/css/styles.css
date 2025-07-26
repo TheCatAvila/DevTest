@@ -61,3 +61,43 @@ main{
     font-weight: 500;
     color: var(--dark-gray);
 }
+
+
+/*  */
+
+.cont-btns-menu{
+    padding: 0 400px;
+}
+
+/* programing style */
+
+.line {
+    display: block;
+    line-height: 1.6;
+}
+
+.keyword {
+    color: #5eb5ff; /* azul claro */
+    font-weight: bold;
+}
+
+.function-name {
+    color: #2980b9; /* azul más intenso */
+}
+
+.parameter {
+    color: #aab7c4; /* gris azulado */
+}
+
+.comment {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.string {
+    color: #ff6f61; /* rojo claro */
+}
+
+.tab{
+    padding-left: 25px;
+}
