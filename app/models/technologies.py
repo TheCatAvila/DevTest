@@ -50,33 +50,33 @@ class Technology:
             return tech_data if tech_data else None
     
     def define_daily_tech(self):
-        """Define la tecnología como la del día."""
-        query = "UPDATE technologies SET daily = TRUE WHERE id = %s"
+        """Agrega la tecnología del día a la tabla daily_tech"""
+        query = "INSERT IGNORE INTO daily_tech (date, tech_id) VALUES (CURDATE(), %s)"
         values = (self.id,)
         
         with Database() as db:
             db.execute(query, values)
             db.commit()
-    
-    @staticmethod
-    def get_daily_tech():
-        """Obtiene los datos de la tecnología del día."""
-        query = "SELECT id FROM technologies WHERE technologies.daily = TRUE;"
-        
-        with Database() as db:
-            db.execute(query)
-            tech_data = db.fetchone()
-            return tech_data if tech_data else None
 
     def verify_daily_tech(self):
         """Verifica si la tecnología ingresada es la del día."""
-        query = "SELECT daily FROM technologies WHERE id = %s"
+        query = "SELECT EXISTS(SELECT 1 FROM daily_tech WHERE tech_id = %s AND date = CURDATE())"
         values = (self.id,)
         
         with Database() as db:
             db.execute(query, values)
             result = db.fetchone()
             return result['daily'] if result else False
+    
+    @staticmethod
+    def get_daily_tech():
+        """Obtiene los datos de la tecnología del día."""
+        query = "SELECT tech_id FROM daily_tech WHERE date = CURDATE();"
+
+        with Database() as db:
+            db.execute(query)
+            tech_data = db.fetchone()
+            return tech_data if tech_data else None
         
     @staticmethod
     def reset_daily_tech():

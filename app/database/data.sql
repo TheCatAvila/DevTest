@@ -1,28 +1,28 @@
--- Categorías
+-- Categories
 INSERT INTO categories (name) VALUES 
-('Lenguaje de programación'),
-('Metodología'),
+('Programming Language'),
+('Methodology'),
 ('Framework'),
-('Herramienta'),
-('Base de datos');
+('Tool'),
+('Database');
 
--- Tipos/Subtipos
+-- Types/Subtypes
 INSERT INTO types (name) VALUES 
 ('Backend'),
-('Ágil'),
+('Agile'),
 ('Frontend'),
-('Virtualización'),
-('Relacional');
+('Virtualization'),
+('Relational');
 
--- Paradigmas/Enfoques
+-- Paradigms/Approaches
 INSERT INTO paradigms (name) VALUES 
-('Multiparadigma'),
-('Ágil'),
-('Declarativo'),
-('Contenerización'),
-('Relacional');
+('Multiparadigm'),
+('Agile'),
+('Declarative'),
+('Containerization'),
+('Relational');
 
--- Empresas/Comunidades
+-- Companies/Communities
 INSERT INTO companies (name) VALUES 
 ('Python Software Foundation'),
 ('Ken Schwaber & Jeff Sutherland'),
@@ -30,13 +30,14 @@ INSERT INTO companies (name) VALUES
 ('Docker Inc.'),
 ('Oracle Corporation');
 
--- Usos principales
+-- Main Uses
 INSERT INTO uses (name) VALUES 
-('Desarrollo general'),
-('Gestión de proyectos'),
-('Desarrollo web'),
+('General Development'),
+('Project Management'),
+('Web Development'),
 ('DevOps'),
-('Almacenamiento de datos');
+('Data Storage');
+
 
 INSERT INTO technologies (name, category_id, type_id, release_year, paradigm_id, company_id, use_id) VALUES
 ('Python', 1, 1, 1991, 1, 1, 1),

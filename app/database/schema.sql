@@ -50,5 +50,9 @@ CREATE TABLE technologies (
     FOREIGN KEY (use_id) REFERENCES uses(id)
 );
 
-ALTER TABLE technologies
-ADD COLUMN daily BOOLEAN DEFAULT FALSE;
+CREATE TABLE daily_tech (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE NOT NULL UNIQUE,
+    tech_id INT NOT NULL,
+    FOREIGN KEY (tech_id) REFERENCES technologies(id)
+);
