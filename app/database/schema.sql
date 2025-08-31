@@ -56,3 +56,11 @@ CREATE TABLE daily_tech (
     tech_id INT NOT NULL,
     FOREIGN KEY (tech_id) REFERENCES technologies(id)
 );
+
+CREATE TABLE guesses_techs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    daily_tech_id INT NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY (daily_tech_id) REFERENCES daily_tech(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)
