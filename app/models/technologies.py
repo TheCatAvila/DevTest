@@ -60,7 +60,7 @@ class Technology:
 
     def verify_daily_tech(self):
         """Verifica si la tecnología ingresada es la del día."""
-        query = "SELECT EXISTS(SELECT 1 FROM daily_tech WHERE tech_id = %s AND date = CURDATE())"
+        query = "SELECT EXISTS(SELECT 1 FROM daily_tech WHERE tech_id = %s AND date = CURDATE()) AS daily"
         values = (self.id,)
         
         with Database() as db:
@@ -81,7 +81,7 @@ class Technology:
     @staticmethod
     def reset_daily_tech():
         """Resetea la tecnología del día."""
-        query = "UPDATE technologies SET daily = FALSE"
+        query = "DELETE FROM daily_tech WHERE date = CURDATE();"
         
         with Database() as db:
             db.execute(query)

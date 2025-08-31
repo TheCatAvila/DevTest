@@ -18,7 +18,7 @@ def techs():
     tech_id = tech_obj.get_id_by_name()
     # Obtener datos de la tecnología ingresada y la del día
     input_tech_data = Technology(id=tech_id).get_tech_data()
-    day_tech_data = Technology(id=daily_tech['id']).get_tech_data()
+    day_tech_data = Technology(id=daily_tech['tech_id']).get_tech_data()
 
     # Diccionario para almacenar si hay coincidencia o no en cada campo
     comparison_result = {}
@@ -75,7 +75,6 @@ def reset_game():
         Technology.reset_daily_tech()
         tech.define_daily_tech()
         print(f"La tecnología del día ha sido definida como: {tech.name}")
-
 
     return redirect('/daily_tech')
 
