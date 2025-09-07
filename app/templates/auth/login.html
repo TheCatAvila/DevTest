@@ -13,19 +13,16 @@
 {% block content %}
 <div class="cont-acceder">
     <div class="info-card">
-        <div class="cont-tittle-create">
-            <h2 style="color: black;">class Login():</h2>
-            <div class="cont-qa">
-                <p>¿Aún no tienes una cuenta? </p>
-                <a href="{{ url_for('auth_routes.register') }}">Clic aquí para registrarte.</a>
-            </div>
-        </div>
 
+        <div class="cont-tittle-desc">
+            <p style="color: black;">class Login():</p>
+            <p style="color: black;">"""Inicia sesión con tu cuenta."""</p>
+        </div>
         <form class="acceder-form" id="loginForm" action="/login_user" method="POST">
             <div class="cont-label-input">
-                <label for="email">email = input("</label>
-                <input type="email" id="email" name="email" required>
-                <label for="email">")</label>
+                <label for="email">email = "</label>
+                <input type="text" id="email" oninput="resizeInput(this)">
+                <label for="email">"</label>
                 <span class="error" id="emailError"></span>
             </div>
             <div class="cont-label-input">
@@ -34,47 +31,44 @@
                 <label for="password">")</label>
                 <span class="error" id="passwordError"></span>
             </div>
-            <button type="submit" class="btn btn-blue">Ingresar</button>
+            <button type="submit" class="btn btn-blue">def Login()</button>
         </form>
 
-        <div class="cont-tittle-create">
-            <h2 style="color: black;">class Register():</h2>
-            <div class="cont-qa">
-                <p>¿Ya tienes una cuenta? </p>
-                <a href="{{ url_for('auth_routes.login') }}">Clic aquí para iniciar.</a>
-            </div>
+        <div class="cont-tittle-desc">
+            <p style="color: black;">class Register():</p>
+            <p style="color: black;">"""Registrate en la página."""</p>
         </div>
 
         <!-- FORM para registrar usuario -->
-        <form action="/register_user" method="POST">
+        <form class="acceder-form" action="/register_user" method="POST">
             <div class="cont-label-input">
-                <label for="name">name = input("</label>
+                <label for="name">name = "</label>
                 <input type="text" id="name" name="name" required>
-                <label for="email">")</label>
+                <label for="">"</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
                 <label for="lastname">last_name = input("</label>
                 <input type="text" id="lastname" name="lastname" required>
-                <label for="email">")</label>
+                <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
                 <label for="email">email = input("</label>
-                <input type="email" id="email" name="email" required>
-                <label for="email">")</label>
+                <input type="email" id="email2" name="email2" required>
+                <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
                 <label for="password">password = input("</label>
                 <input type="password" id="password" name="password" required>
-                <label for="email">")</label>
+                <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
                 <label for="password_confirm">repit_password = input("</label>
                 <input type="password" id="password_confirm" name="password_confirm" required>
-                <label for="email">")</label>
+                <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <button type="submit" class="btn btn-blue">Registrarse</button>
@@ -86,5 +80,10 @@
 
 <!-- JavaScript personalizado por página -->
 {% block js %}
+<script>
+    function resizeInput(input) {
+        input.style.width = ((input.value.length + 1) * 8) + "px";
+    }
+</script>
 <script src="{{ url_for('static', filename='js/swal-login.js') }}"></script>
 {% endblock %}

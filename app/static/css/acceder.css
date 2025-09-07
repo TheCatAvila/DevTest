@@ -1,10 +1,6 @@
-h2, p, a{
-    margin: 0;
-    padding: 0;
-}
-
-p, a{
-    font-size: 0.8em;
+p, label, input{
+    font-family: monospace;
+    font-size: 0.875em;
 }
 
 /* COLUMNAS Y ROWS */
@@ -30,14 +26,9 @@ p, a{
     justify-content: center;
 }
 
-.cont-tittle-create{
-    height: auto;
+.cont-tittle-desc{
     width: 100%;
-    padding: 0 0 15px 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    text-align: start;
 }
 
 .cont-qa{
@@ -58,15 +49,23 @@ p, a{
 .acceder-form{
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: start;
+    margin: 0 0 0 5em;
 }
 
 .cont-label-input{
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 10px 0 10px 0;
+    justify-content: left;
+    margin: 0;
+}
+
+input, select, textarea {
+    width: 1px;
+    appearance: none;
+    background-color: white;
+    color: black;
+    border: none;
+    outline: none;
 }
