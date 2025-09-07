@@ -54,3 +54,19 @@ p, a{
     width: 100%;
     margin: 25px 0 10px 0;
 }
+
+.acceder-form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.cont-label-input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}

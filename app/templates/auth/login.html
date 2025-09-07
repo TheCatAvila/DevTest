@@ -14,27 +14,73 @@
 <div class="cont-acceder">
     <div class="info-card">
         <div class="cont-tittle-create">
-            <h2>Ingresar</h2>
+            <h2 style="color: black;">class Login():</h2>
             <div class="cont-qa">
                 <p>¿Aún no tienes una cuenta? </p>
                 <a href="{{ url_for('auth_routes.register') }}">Clic aquí para registrarte.</a>
             </div>
         </div>
-        
-        <form id="loginForm" action="/login_user" method="POST">
+
+        <form class="acceder-form" id="loginForm" action="/login_user" method="POST">
             <div class="cont-label-input">
-                <label for="email">Email</label>
+                <label for="email">email = input("</label>
                 <input type="email" id="email" name="email" required>
+                <label for="email">")</label>
                 <span class="error" id="emailError"></span>
             </div>
             <div class="cont-label-input">
-                <label for="password">Contraseña</label>
+                <label for="password">password = input("</label>
                 <input type="password" id="password" name="password" required>
+                <label for="password">")</label>
                 <span class="error" id="passwordError"></span>
             </div>
             <button type="submit" class="btn btn-blue">Ingresar</button>
         </form>
+
+        <div class="cont-tittle-create">
+            <h2 style="color: black;">class Register():</h2>
+            <div class="cont-qa">
+                <p>¿Ya tienes una cuenta? </p>
+                <a href="{{ url_for('auth_routes.login') }}">Clic aquí para iniciar.</a>
+            </div>
+        </div>
+
+        <!-- FORM para registrar usuario -->
+        <form action="/register_user" method="POST">
+            <div class="cont-label-input">
+                <label for="name">name = input("</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">")</label>
+                <span class="error" id="montoError"></span>
+            </div>
+            <div class="cont-label-input">
+                <label for="lastname">last_name = input("</label>
+                <input type="text" id="lastname" name="lastname" required>
+                <label for="email">")</label>
+                <span class="error" id="montoError"></span>
+            </div>
+            <div class="cont-label-input">
+                <label for="email">email = input("</label>
+                <input type="email" id="email" name="email" required>
+                <label for="email">")</label>
+                <span class="error" id="montoError"></span>
+            </div>
+            <div class="cont-label-input">
+                <label for="password">password = input("</label>
+                <input type="password" id="password" name="password" required>
+                <label for="email">")</label>
+                <span class="error" id="montoError"></span>
+            </div>
+            <div class="cont-label-input">
+                <label for="password_confirm">repit_password = input("</label>
+                <input type="password" id="password_confirm" name="password_confirm" required>
+                <label for="email">")</label>
+                <span class="error" id="montoError"></span>
+            </div>
+            <button type="submit" class="btn btn-blue">Registrarse</button>
+        </form>
     </div>
+
 </div>
 {% endblock %}
 
