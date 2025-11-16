@@ -37,6 +37,9 @@ CREATE TABLE uses (
 CREATE TABLE technologies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
+    logo_url TEXT,
+    description TEXT,
+    documentation_url TEXT,
     category_id INT NOT NULL,
     type_id INT NOT NULL,
     release_year INT NOT NULL,
