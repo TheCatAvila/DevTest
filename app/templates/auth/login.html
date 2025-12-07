@@ -12,61 +12,169 @@
 <!-- Contenido principal de la página -->
 {% block content %}
 <div class="cont-acceder">
+
+
+    <div class="cont-btns-menu">
+
+        <h3 class="line"><span class="keyword">class</span> <span class="class-name">Dailys</span><span
+                class="grouping_symbols">()</span>:</h3>
+        <div style="margin-left: 60px;">
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">daily_tech</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <div class="tab">
+                <div class="line comment">"""Ingresa tus datos en las variables correspondientes."""</div>
+                <div class="cont-label-input">
+                    <label for="name"><span class="parameter">name</span> = "</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="">"</label>
+                    <span class="error" id="montoError"></span>
+                </div>
+                <div class="cont-label-input">
+                    <label for="lastname"><span class="parameter">lastname</span> = input("</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                    <label for="">")</label>
+                    <span class="error" id="montoError"></span>
+                </div>
+                <div class="cont-label-input">
+                    <label for="email"><span class="parameter">email</span> = input("</label>
+                    <input type="email" id="email2" name="email2" required>
+                    <label for="">")</label>
+                    <span class="error" id="montoError"></span>
+                </div>
+                <div class="cont-label-input">
+                    <label for="password"><span class="parameter">password</span> = input("</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="">")</label>
+                    <span class="error" id="montoError"></span>
+                </div>
+                <div class="cont-label-input">
+                    <label for="password_confirm"><span class="parameter">repit_password</span> = input("</label>
+                    <input type="password" id="password_confirm" name="password_confirm" required>
+                    <label for="">")</label>
+                    <span class="error" id="montoError"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de Login -->
+        <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">login</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <div class="tab">
+                <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <div class="line">
+                    <div><span class="parameter">query</span> = <span class="string">"SELECT id, password FROM users WHERE email = %s"</span></div>
+                    <div><span class="parameter">values</span> = <span class="grouping_symbols">(</span><span class="parameter">self</span>.<span class="parameter">email</span>,<span class="grouping_symbols">)</span></div>
+                    <span class="return">return</span> <span class="function-name">render_template</span><span
+                        class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
+                        class="grouping_symbols">)</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Botón de Register -->
+        <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">register</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <div class="tab">
+                <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <div class="line">
+                    <span class="return">return</span> <span class="function-name">render_template</span><span
+                        class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
+                        class="grouping_symbols">)</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
     <div class="info-card">
 
+
+
         <div class="cont-tittle-desc">
-            <p style="color: black;">class Login():</p>
-            <p style="color: black;">"""Inicia sesión con tu cuenta."""</p>
+            <h3 class="line"><span class="keyword">class</span> <span class="class-name">Auth</span><span
+                    class="grouping_symbols">()</span>:</h3>
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">__init__</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <p class="comment">"""Inicia sesión con tu cuenta."""</p>
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">login</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <p class="comment">"""Inicia sesión con tu cuenta."""</p>
         </div>
         <form class="acceder-form" id="loginForm" action="/login_user" method="POST">
             <div class="cont-label-input">
-                <label for="email">email = "</label>
+                <label for="email"> <span class="parameter">self.email</span> = "</label>
                 <input type="text" id="email" oninput="resizeInput(this)">
                 <label for="email">"</label>
                 <span class="error" id="emailError"></span>
             </div>
             <div class="cont-label-input">
-                <label for="password">password = input("</label>
+                <label for="password"><span class="parameter">self.password</span> = "</label>
                 <input type="password" id="password" name="password" required>
                 <label for="password">")</label>
                 <span class="error" id="passwordError"></span>
             </div>
-            <button type="submit" class="btn btn-blue">def Login()</button>
+            <button class="btn-main-menu btn-return" type="submit">
+                <div class="line">
+                    <span class="return">return</span> <span class="function-name">login</span><span
+                        class="grouping_symbols">(</span><span class="parameter">email</span>, <span
+                        class="parameter">password</span><span class="grouping_symbols">)</span>
+                </div>
+            </button>
         </form>
 
         <div class="cont-tittle-desc">
-            <p style="color: black;">class Register():</p>
-            <p style="color: black;">"""Registrate en la página."""</p>
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">register</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <p class="comment">"""Registrate en la página."""</p>
         </div>
 
         <!-- FORM para registrar usuario -->
         <form class="acceder-form" action="/register_user" method="POST">
             <div class="cont-label-input">
-                <label for="name">name = "</label>
+                <label for="name"><span class="parameter">name</span> = "</label>
                 <input type="text" id="name" name="name" required>
                 <label for="">"</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
-                <label for="lastname">last_name = input("</label>
+                <label for="lastname"><span class="parameter">lastname</span> = input("</label>
                 <input type="text" id="lastname" name="lastname" required>
                 <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
-                <label for="email">email = input("</label>
+                <label for="email"><span class="parameter">email</span> = input("</label>
                 <input type="email" id="email2" name="email2" required>
                 <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
-                <label for="password">password = input("</label>
+                <label for="password"><span class="parameter">password</span> = input("</label>
                 <input type="password" id="password" name="password" required>
                 <label for="">")</label>
                 <span class="error" id="montoError"></span>
             </div>
             <div class="cont-label-input">
-                <label for="password_confirm">repit_password = input("</label>
+                <label for="password_confirm"><span class="parameter">repit_password</span> = input("</label>
                 <input type="password" id="password_confirm" name="password_confirm" required>
                 <label for="">")</label>
                 <span class="error" id="montoError"></span>

@@ -10,6 +10,7 @@ p, label, input{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(12, 12, 12);
 }
 
 .info-card {
@@ -24,6 +25,7 @@ p, label, input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--dark-gray-2);
 }
 
 .cont-tittle-desc{

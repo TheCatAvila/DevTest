@@ -15,5 +15,14 @@
     --def-blue: #569CD6;
     --variable-light-blue:#9CDCFE;
     --def-yellow: #DCDCAA;
+
+    --keyword: #569cd6;
+    --function-name: #dcdcaa;
+    --class-name: #4cc1a9;
+    --parameter: #9cdcfe;
+    --comment: #ce9178;
+    --string: #ce9178;    
+    --return: #ce92a4;
+    --grouping_symbols: #ffd700;
   }
   

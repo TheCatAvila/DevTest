@@ -46,15 +46,6 @@
     color: azure;
 }
 
-.pre-funcion { color: blue;}
-.variables { color: aqua;}
-.keyword { color: violet; }
-.function { color: gold; }
-.string { color: orange; }
-.comment { color: #888; }
-.line { display: block; font-family: monospace; }
-
-
 .btn-main-menu {
     display: block;
     background: #1e1e1e;
@@ -65,15 +56,12 @@
     text-decoration: none;
     margin-bottom: 10px;
     transition: background 0.3s;
+    margin-left: 50px;
 }
 
 .btn-main-menu:hover {
     background: #333;
 }
-
-
-/*  */
-
 .btn-main-menu {
     display: block;
     background-color: #1f1f1f;
@@ -91,33 +79,7 @@
     background-color: #2c2c2c;
 }
 
-.line {
-    display: block;
-    line-height: 1.6;
-}
-
-.keyword {
-    color: #5eb5ff; /* azul claro */
-    font-weight: bold;
-}
-
-.function-name {
-    color: #2980b9; /* azul más intenso */
-}
-
-.parameter {
-    color: #aab7c4; /* gris azulado */
-}
-
-.comment {
-    color: #7f8c8d;
-    font-style: italic;
-}
-
-.string {
-    color: #ff6f61; /* rojo claro */
-}
-
-.tab{
-    padding-left: 25px;
+.btn-return{
+    margin: 0;
+    margin-left: -15px
 }
