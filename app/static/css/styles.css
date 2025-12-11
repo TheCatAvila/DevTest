@@ -4,14 +4,14 @@
 body {
     display: flex;
     height: 100vh;
-    background-color: var(--light-gray);
+    background-color: var(--main-background);
     color: var(--light-gray);
 }
 
 main{
     height: 100%;
     width: 100%;
-    background-color: var(--dark-gray-2);
+    background-color: var(--main-background);
 }
 
 /* NAVBAR */
@@ -20,6 +20,16 @@ main{
     color: var(--dark-gray);
     border-bottom: 1px solid var(--dark-gray-3);
 }
+
+.navbar-name{
+    font-size: 26px;
+}
+
+.prefijo-navbar{
+    font-size: 18px;
+    margin-bottom: -5px;
+}
+
 
 /* COLUMNAS Y ROWS */
 .cont-main{
@@ -69,8 +79,9 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: black;
+    background-color: var(--navbar-background);
     width: 450px;
+    border-right: 1px solid #3551f1;
 }
 
 .img-perfil {
