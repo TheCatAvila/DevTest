@@ -33,7 +33,47 @@ main{
 
 /* COLUMNAS Y ROWS */
 .cont-main{
-    margin-top: 70px;
+    margin-top: 40px;
+}
+
+.cont-sub-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.cont-btns-menu{
+    width: 49%;
+    padding: 0 50px;
+}
+
+.cont-leaderboard{
+    width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leaderboard{
+    height: 600px;
+    width: 450px;
+    display: block;
+    background: var(--main-background);
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 8px;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+    margin-left: 50px;
+}
+
+.separator{
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid #3551f1;
+    margin: 0 20px;
 }
 
 .row {
@@ -80,8 +120,9 @@ main{
     align-items: center;
     flex-direction: column;
     background-color: var(--navbar-background);
-    width: 450px;
+    width: 500px;
     border-right: 1px solid #3551f1;
+    justify-content: space-between;
 }
 
 .img-perfil {
@@ -90,8 +131,23 @@ main{
     border-radius: 100%;
 }
 
-.cont-btns-menu{
-    padding: 0 400px;
+.logo-devle{
+    width: 65px;
+    margin-right: 15px;
+}
+
+.cont-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 50px 0;
+}
+
+.txt-logo-devle{
+    font-size: 55px;
+    font-weight: bold;
+    font-family: monospace;
 }
 
 /* programing style */

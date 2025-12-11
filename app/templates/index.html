@@ -9,75 +9,143 @@
 {% block content %}
 <div class="container-fluid cont-main">
     <div class="row gx-0">
-        <div class="cont-btns-menu">
+        <div class="cont-sub-main">
+            <div class="cont-btns-menu">
 
-            <h3 class="line"><span class="keyword">class</span> <span class="class-name">Dailys</span><span class="grouping_symbols">()</span>:</h3>
+                <h3 class="line"><span class="keyword">class</span> <span class="class-name">Dailys</span><span
+                        class="grouping_symbols">()</span>:</h3>
 
-            <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
-                <div class="line">
-                    <span class="keyword">def</span> <span class="function-name">daily_tech</span><span class="grouping_symbols">(</span><span
-                        class="parameter">self</span><span class="grouping_symbols">)</span>:
-                </div>
-                <div class="tab">
-                    <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
                     <div class="line">
-                        <span class="return">return</span> <span class="function-name">render_template</span><span class="grouping_symbols">(</span><span
-                            class="string">'daily_tech.html'</span><span class="grouping_symbols">)</span>
+                        <span class="keyword">def</span> <span class="function-name">daily_tech</span><span
+                            class="grouping_symbols">(</span><span class="parameter">self</span><span
+                            class="grouping_symbols">)</span>:
                     </div>
-                </div>
+                    <div class="tab">
+                        <div class="line comment">"""Opens the daily challenge where the user must guess the technology
+                            of the day."""</div>
+                        <div class="line">
+                            <span class="return">return</span> <span class="function-name">render_template</span><span
+                                class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
+                                class="grouping_symbols">)</span>
+                        </div>
+                    </div>
 
-            </a>
+                </a>
 
-            <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
-                <div class="line">
-                    <span class="keyword">def</span> <span class="function-name">daily_tech</span>(<span
-                        class="parameter">self</span>):
-                </div>
-                <div class="tab">
-                    <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
                     <div class="line">
-                        <span class="keyword">return</span> <span class="function-name">render_template</span>(<span
-                            class="string">'daily_tech.html'</span>)
+                        <span class="keyword">def</span> <span class="function-name">daily_quizz</span>(<span
+                            class="parameter">self</span>):
                     </div>
-                </div>
+                    <div class="tab">
+                        <div class="line comment">"""Opens the daily challenge where the user must answer the
+                            question."""</div>
+                        <div class="line">
+                            <span class="keyword">return</span> <span class="function-name">render_template</span>(<span
+                                class="string">'daily_tech.html'</span>)
+                        </div>
+                    </div>
 
-            </a>
+                </a>
 
-            <h3 class="line"><span class="keyword">class</span> <span class="class-name">Free</span><span class="grouping_symbols">()</span>:</h3>
-            <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
-                <div class="line">
-                    <span class="keyword">def</span> <span class="function-name">daily_tech</span>(<span
-                        class="parameter">self</span>):
-                </div>
-                <div class="tab">
-                    <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <h3 class="line"><span class="keyword">class</span> <span class="class-name">Free</span><span
+                        class="grouping_symbols">()</span>:</h3>
+                <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
                     <div class="line">
-                        <span class="keyword">return</span> <span class="function-name">render_template</span>(<span
-                            class="string">'daily_tech.html'</span>)
+                        <span class="keyword">def</span> <span class="function-name">free_tech</span>(<span
+                            class="parameter">self</span>):
                     </div>
-                </div>
+                    <div class="tab">
+                        <div class="line comment">""""""Opens the challenge where the user can guess the technology with
+                            unlimited attempts.""""""</div>
+                        <div class="line">
+                            <span class="keyword">return</span> <span class="function-name">render_template</span>(<span
+                                class="string">'daily_tech.html'</span>)
+                        </div>
+                    </div>
 
-            </a>
+                </a>
 
-            <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
-                <div class="line">
-                    <span class="keyword">def</span> <span class="function-name">daily_tech</span>(<span
-                        class="parameter">self</span>):
-                </div>
-                <div class="tab">
-                    <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
                     <div class="line">
-                        <span class="keyword">return</span> <span class="function-name">render_template</span>(<span
-                            class="string">'daily_tech.html'</span>)
+                        <span class="keyword">def</span> <span class="function-name">free_quizz</span>(<span
+                            class="parameter">self</span>):
                     </div>
+                    <div class="tab">
+                        <div class="line comment">"""Opens the challenge where the user can answer the question with
+                            unlimited attempts."""</div>
+                        <div class="line">
+                            <span class="keyword">return</span> <span class="function-name">render_template</span>(<span
+                                class="string">'daily_tech.html'</span>)
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <!-- Separador -->
+            <div class="separator"></div>
+            <!-- Word table -->
+            <div class="cont-leaderboard">
+                <div class="leaderboard">
+                    <div class="line">
+                        <span class="keyword">def</span> <span class="function-name">leaderboard</span>(<span
+                            class="parameter">self</span>):
+                    </div>
+
+                    <div class="tab">
+                        <div class="line comment">"""Leaderboard of top players."""</div>
+
+                        <div class="line">
+                            <span class="keyword">return</span> <span class="function-name">list</span>([
+                        </div>
+
+                        <div class="tab">
+
+                            <div class="line">(<span class="string">'#1'</span>, <span class="string">'Felipe'</span>,
+                                <span class="string">'3405'</span>),</div>
+                            <div class="line">(<span class="string">'#2'</span>, <span class="string">'Diego'</span>,
+                                <span class="string">'3290'</span>),</div>
+                            <div class="line">(<span class="string">'#3'</span>, <span class="string">'Camila'</span>,
+                                <span class="string">'3102'</span>),</div>
+                            <div class="line">(<span class="string">'#4'</span>, <span class="string">'Javiera'</span>,
+                                <span class="string">'2998'</span>),</div>
+                            <div class="line">(<span class="string">'#5'</span>, <span class="string">'Tomás'</span>,
+                                <span class="string">'2871'</span>),</div>
+
+                            <div class="line">(<span class="string">'#6'</span>, <span
+                                    class="string">'Valentina'</span>, <span class="string">'2764'</span>),</div>
+                            <div class="line">(<span class="string">'#7'</span>, <span class="string">'Gonzalo'</span>,
+                                <span class="string">'2689'</span>),</div>
+                            <div class="line">(<span class="string">'#8'</span>, <span class="string">'Matías'</span>,
+                                <span class="string">'2590'</span>),</div>
+                            <div class="line">(<span class="string">'#9'</span>, <span
+                                    class="string">'Francisca'</span>, <span class="string">'2442'</span>),</div>
+                            <div class="line">(<span class="string">'#10'</span>, <span
+                                    class="string">'Sebastián'</span>, <span class="string">'2388'</span>),</div>
+
+                            <div class="line">(<span class="string">'#11'</span>, <span class="string">'Nicole'</span>,
+                                <span class="string">'2276'</span>),</div>
+                            <div class="line">(<span class="string">'#12'</span>, <span class="string">'Ignacio'</span>,
+                                <span class="string">'2193'</span>),</div>
+                            <div class="line">(<span class="string">'#13'</span>, <span class="string">'Daniela'</span>,
+                                <span class="string">'2101'</span>),</div>
+                            <div class="line">(<span class="string">'#14'</span>, <span class="string">'Pablo'</span>,
+                                <span class="string">'1998'</span>),</div>
+                            <div class="line">(<span class="string">'#15'</span>, <span class="string">'Rodrigo'</span>,
+                                <span class="string">'1854'</span>)</div>
+
+                        </div>
+
+                        <div class="line">])</div>
+                    </div>
+
                 </div>
+            </div>
 
-            </a>
 
-            <form action="/reset_game">
-                <input type="submit" value="Reset">
-            </form>
         </div>
+
     </div>
 </div>
 {% endblock %}
