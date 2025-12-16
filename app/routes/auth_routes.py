@@ -7,20 +7,18 @@ from app.services.user_service import UserService
 # Blueprint llamado 'main'
 auth_routes = Blueprint('auth_routes', __name__)
 
-@auth_routes.route('/ingresar')
+@auth_routes.route('/auth')
 def login():
-    return render_template('auth/login.html')
-
-@auth_routes.route('/registrar')
-def register():
-    return render_template('auth/register.html')
+    return render_template('auth/auth.html')
 
 @auth_routes.route("/login_user", methods=["POST"])
 def login_user():
     if request.method == "POST":
         # Obtener los datos del formulario
-        email = request.form["email"]
-        password = request.form["password"]
+        email = request.form["email_login"]
+        password = request.form["password_login"]
+
+        print(email, password)
 
         # Validar los datos del formulario
         user_service = UserService(email=email)

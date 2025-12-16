@@ -64,10 +64,10 @@ p, label, input{
 }
 
 input, select, textarea {
-    width: 1px;
+    width: 15px;
     appearance: none;
-    background-color: white;
-    color: black;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     border: none;
     outline: none;
 }

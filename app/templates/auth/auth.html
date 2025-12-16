@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block title %}Ingresar{% endblock %}
+
+<!-- No mostrar el header -->
+{% block header %}{% endblock %}
+
+<!-- Estilos css personalizados por página -->
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/acceder.css') }}">
+{% endblock %}
+
+<!-- Contenido principal de la página -->
+{% block content %}
+<div class="cont-acceder">
+
+
+    <div class="cont-btns-menu">
+
+        <h3 class="line"><span class="keyword">class</span> <span class="class-name">Auth</span><span
+                class="grouping_symbols">()</span>:</h3>
+        <div style="margin-left: 60px;">
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">__init__</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <div class="tab">
+                <div class="line comment">"""Ingresa tus datos en las variables correspondientes."""</div>
+                <div class="line cont-label-input">
+                    <span class="parameter">self</span>.<span class="parameter">username</span> <span>=</span>
+                    <span class="string">"</span>
+                    <input class="string" type="text" id="username_general" oninput="resizeInput(this)">
+                    <span class="string">"</span>
+                </div>
+                <div class="line cont-label-input">
+                    <span class="parameter">self</span>.<span class="parameter">email</span> <span>=</span>
+                    <span class="string">"</span>
+                    <input class="string" type="email" id="email_general" oninput="resizeInput(this)">
+                    <span class="string">"</span>
+                </div>
+                <div class="line cont-label-input">
+                    <span class="parameter">self</span>.<span class="parameter">password</span> <span>=</span>
+                    <span class="string">"</span>
+                    <input class="string" type="password" id="password_general" oninput="resizeInput(this)">
+                    <span class="string">"</span>
+                </div>
+                <div class="line cont-label-input">
+                    <span class="parameter">self</span>.<span class="parameter">repit_password</span> <span>=</span>
+                    <span class="string">"</span>
+                    <input class="string" type="password" id="repit_password_general" oninput="resizeInput(this)">
+                    <span class="string">"</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de Login -->
+        <form action="/login_user" method="post">
+            <input type="hidden" name="email_login" id="email_login">
+            <input type="hidden" name="password_login" id="password_login">
+            <button type="submit" class="btn btn-main-menu" method="post">
+                <div class="line">
+                    <span class="keyword">def</span> <span class="function-name">login</span><span
+                        class="grouping_symbols">(</span><span class="parameter">self</span><span
+                        class="grouping_symbols">)</span>:
+                </div>
+                <div class="tab">
+                    <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                    <div class="line">
+                        <div><span class="parameter">query</span> = <span class="string">"SELECT id, password FROM users
+                                WHERE email = %s"</span></div>
+                        <div><span class="parameter">values</span> = <span class="grouping_symbols">(</span><span
+                                class="parameter">self</span>.<span class="parameter">email</span>,<span
+                                class="grouping_symbols">)</span></div>
+                        <span class="return">return</span> <span class="function-name">render_template</span><span
+                            class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
+                            class="grouping_symbols">)</span>
+                    </div>
+                </div>
+            </button>
+        </form>
+
+        <!-- Botón de Register -->
+        <a class="btn btn-main-menu" href="{{ url_for('auth_routes.register_user') }}">
+            <div class="line">
+                <span class="keyword">def</span> <span class="function-name">register</span><span
+                    class="grouping_symbols">(</span><span class="parameter">self</span><span
+                    class="grouping_symbols">)</span>:
+            </div>
+            <div class="tab">
+                <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                <div class="line">
+                    <span class="return">return</span> <span class="function-name">render_template</span><span
+                        class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
+                        class="grouping_symbols">)</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}
+
+<!-- JavaScript personalizado por página -->
+{% block js %}
+<script>
+    function resizeInput(input) {
+        input.style.width = ((input.value.length + 1) * 7.5) + "px";
+
+        const usernameGeneral = document.getElementById('username_general').value;
+        const emailGeneral = document.getElementById('email_general').value;
+        const passwordGeneral = document.getElementById('password_general').value;
+        const repitPasswordGeneral = document.getElementById('repit_password_general').value;
+
+        document.getElementById('username_register').value = usernameGeneral;
+        document.getElementById('email_login').value = emailGeneral;
+        document.getElementById('password_login').value = passwordGeneral;
+        document.getElementById('password_repit_register').value = repitPasswordGeneral;
+
+    }
+</script>
+<script src="{{ url_for('static', filename='js/swal-login.js') }}"></script>
+{% endblock %}

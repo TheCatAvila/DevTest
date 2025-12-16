@@ -4,6 +4,54 @@
 <!-- Estilos css personalizados por página -->
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/techs.css') }}">
+<style>
+    .tech-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #0d0d0d; /* fondo negro */
+        color: #e5e5e5;
+        border: 2px solid #007bff; /* borde azul */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .tech-table thead {
+        background: #000; /* negro más puro */
+    }
+
+    .tech-table thead th {
+        padding: 12px;
+        font-size: 16px;
+        color: #00a2ff; /* azul */
+        border-bottom: 2px solid #007bff;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .tech-table tbody tr {
+        transition: 0.2s ease;
+    }
+
+    .tech-table tbody tr:hover {
+        background: rgba(0, 122, 255, 0.1);
+    }
+
+    .tech-table tbody td {
+        padding: 10px;
+        border-bottom: 1px solid rgba(0, 122, 255, 0.3); /* líneas azules suaves */
+    }
+
+    /* Colores para coincidencias */
+    .match-green {
+        color: #22ff22;
+    }
+    .match-red {
+        color: #ff4444;
+    }
+    .match-yellow {
+        color: #ffe066;
+    }
+</style>
 {% endblock %}
 
 <!-- Contenido principal de la página -->
@@ -22,11 +70,11 @@
         </form>
 
         {% endif %}
-        <form action="/reset_game">
+        <!-- <form action="/reset_game">
             <input type="submit" value="Reset">
-        </form>
+        </form> -->
         <div>
-            <h3>Attempts: {{ attempts }}</h3>
+            <h3>Attempts: 0</h3>
         </div>
         <table class="table text-center align-middle">
             <thead class="table-dark">
@@ -41,14 +89,15 @@
                 </tr>
             </thead>
             <tbody>
-                {% for tech in guessed_techs_data | reverse %}
+                <!-- {% for tech in guessed_techs_data | reverse %}
                 <tr>
                     {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
                     {% set data = tech.comparison[key] %}
                     <td style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</td>
                     {% endfor %}
                 </tr>
-                {% endfor %}
+                {% endfor %} -->
+    
             </tbody>
         </table>
     </div>
