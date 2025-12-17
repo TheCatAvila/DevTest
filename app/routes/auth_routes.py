@@ -14,15 +14,17 @@ def login():
 @auth_routes.route("/login_user", methods=["POST"])
 def login_user():
     if request.method == "POST":
+        print("Login request received-----------")
         # Obtener los datos del formulario
         email = request.form["email_login"]
         password = request.form["password_login"]
-
-        print(email, password)
+        print("Email and Password received:------")
+        print("email:", email)
+        print("password:", password)
 
         # Validar los datos del formulario
-        user_service = UserService(email=email)
-        user_service.validate_email()
+        #user_service = UserService(email=email)
+        #user_service.validate_email()
 
         # Logear al usuario
         if User(email=email, password=password).login():

@@ -103,20 +103,35 @@
 <!-- JavaScript personalizado por página -->
 {% block js %}
 <script>
-    function resizeInput(input) {
-        input.style.width = ((input.value.length + 1) * 7.5) + "px";
+function resizeInput(input) {
+    input.style.width = ((input.value.length + 1) * 7.5) + "px";
 
-        const usernameGeneral = document.getElementById('username_general').value;
-        const emailGeneral = document.getElementById('email_general').value;
-        const passwordGeneral = document.getElementById('password_general').value;
-        const repitPasswordGeneral = document.getElementById('repit_password_general').value;
+    const usernameGeneral = document.getElementById('username_general')?.value || '';
+    const emailGeneral = document.getElementById('email_general')?.value || '';
+    const passwordGeneral = document.getElementById('password_general')?.value || '';
+    const repitPasswordGeneral = document.getElementById('repit_password_general')?.value || '';
 
-        document.getElementById('username_register').value = usernameGeneral;
-        document.getElementById('email_login').value = emailGeneral;
-        document.getElementById('password_login').value = passwordGeneral;
-        document.getElementById('password_repit_register').value = repitPasswordGeneral;
-
+    const usernameRegister = document.getElementById('username_register');
+    if (usernameRegister) {
+        usernameRegister.value = usernameGeneral;
     }
+
+    const emailLogin = document.getElementById('email_login');
+    if (emailLogin) {
+        emailLogin.value = emailGeneral;
+    }
+
+    const passwordLogin = document.getElementById('password_login');
+    if (passwordLogin) {
+        passwordLogin.value = passwordGeneral;
+    }
+
+    const passwordRepitRegister = document.getElementById('password_repit_register');
+    if (passwordRepitRegister) {
+        passwordRepitRegister.value = repitPasswordGeneral;
+    }
+}
 </script>
+
 <script src="{{ url_for('static', filename='js/swal-login.js') }}"></script>
 {% endblock %}
