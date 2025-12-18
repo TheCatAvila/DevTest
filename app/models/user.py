@@ -3,10 +3,9 @@ from app.database.db_connection import Database
 from app.utils.security_utils import hash_password, check_password
 
 class User:
-    def __init__(self, id: int = None, name: str = None, lastname: str = None, email: str = None, password: str = None):
+    def __init__(self, id: int = None, username: str = None, email: str = None, password: str = None):
         self.id = id
-        self.name = name
-        self.lastname = lastname
+        self.username = username
         self.email = email
         self.password = password
     
@@ -28,8 +27,8 @@ class User:
         """Registra al usuario usando los atributos de la instancia."""
         try:
             hashed_password = hash_password(self.password)
-            query = "INSERT INTO users (name, lastname, email, password, register_date) VALUES (%s, %s, %s, %s, NOW())"
-            values = (self.name, self.lastname, self.email, hashed_password)
+            query = "INSERT INTO users (username, email, password, register_date) VALUES (%s, %s, %s, NOW())"
+            values = (self.username, self.email, hashed_password)
 
             with Database() as db:
                 db.execute(query, values)
@@ -42,7 +41,7 @@ class User:
         
     def get_login_data(self):
         """Obtiene los datos del usuario logueado."""
-        query = "SELECT name FROM users WHERE id = %s"
+        query = "SELECT username FROM users WHERE id = %s"
         values = (self.id,)
         
         with Database() as db:

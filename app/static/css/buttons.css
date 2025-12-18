@@ -68,7 +68,7 @@
     margin-left: -15px
 }
 
-.btn-log-out{
+.div-log-out{
     width: 90%;
     height: 50px;
     border: 1px solid #ff0000;
@@ -80,4 +80,42 @@
     color: #ff0000;
     font-size: 20px;
     text-decoration: none;
+}
+
+.btn-log-out{
+    color: #ff0000;
+    font-size: 20px;
+    text-decoration: none;
+    width: 100%;
+    background-color: var(--navbar-background);
+    border-radius: 100px;
+}
+
+.div-login-register{
+    width: 90%;
+    height: 50px;
+    border: 1px solid var(--class-name);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;             
+    align-items: center;        
+    justify-content: center; 
+    text-align: center;  
+    color: var(--class-name);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btn-login-register{
+    color: var(--class-name);
+    font-size: 20px;
+    text-decoration: none;
+    width: 100%;
+    background-color: var(--navbar-background);
+    border-radius: 100px;
+}
+
+.btn-blocked{
+    pointer-events: none;
+    opacity: 0.6;
 }

@@ -70,3 +70,16 @@ INSERT INTO technologies (name, category_id, type_id, release_year, paradigm_id,
 ('SQLite', 5, 5, 2000, 5, 5, 5),                      -- Base de datos relacional ligera
 ('Go', 1, 1, 2009, 1, 3, 1);                          -- Lenguaje multiparadigma, Google, backend
 
+-- Nuevas tecnologías
+INSERT INTO technologies (name, category_id, type_id, release_year, paradigm_id, company_id, use_id) VALUES
+('TypeScript', 1, 3, 2012, 1, 3, 3),           -- Lenguaje multiparadigma, frontend, Meta/Google, desarrollo web
+('Swift', 1, 1, 2014, 1, 1, 1),               -- Lenguaje multiparadigma, backend/IOS, Apple, desarrollo general
+('Rust', 1, 1, 2010, 1, 5, 1),                -- Lenguaje multiparadigma, backend, Mozilla, desarrollo general
+('Django', 3, 1, 2005, 1, 1, 1),              -- Framework backend, multiparadigma, Python community, desarrollo web
+('Spring Boot', 3, 1, 2014, 1, 5, 1),         -- Framework backend, multiparadigma, Oracle, desarrollo general
+('Vuex', 3, 3, 2015, 3, 3, 3),                -- Framework frontend state management, declarativo, Vue community, desarrollo web
+('Ansible', 4, 4, 2012, 4, 5, 4),             -- Herramienta DevOps, automatización, RedHat, DevOps
+('Redis', 5, 5, 2009, 5, 5, 5),               -- Base de datos en memoria, almacenamiento de datos
+('ElasticSearch', 5, 5, 2010, 5, 5, 5),       -- Base de datos NoSQL, búsqueda y analítica
+('Figma', 4, 2, 2016, 2, 3, 3);               -- Herramienta de diseño, UI/UX, Meta/Comunidad, desarrollo web
+

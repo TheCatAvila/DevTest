@@ -7,6 +7,13 @@ CREATE TABLE IF NOT EXISTS users (
     register_date DATETIME NOT NULL
 );
 
+ALTER TABLE users
+ADD COLUMN username VARCHAR(50) UNIQUE NOT NULL;
+
+ALTER TABLE users
+DROP COLUMN name,
+DROP COLUMN lastname;
+
 -- Reference tables (normalized)
 CREATE TABLE categories (
     id INT AUTO_INCREMENT PRIMARY KEY,

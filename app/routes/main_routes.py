@@ -23,7 +23,12 @@ def daily_tech():
     attempts = session.get('attempts', 0)
     user_winner = session.get('user_winner', False)
 
-    return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner)
+    user_id = session.get("user_id")
+    user_login_data = User(id=user_id).get_login_data()
+    if not user_login_data:
+        return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner)
+
+    return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner, user_login_data=user_login_data)
 
 @main.route('/free_tech')
 def free_tech():
@@ -32,4 +37,9 @@ def free_tech():
     attempts = session.get('attempts', 0)
     user_winner = session.get('user_winner', False)
 
-    return render_template('free_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner)
+    user_id = session.get("user_id")
+    user_login_data = User(id=user_id).get_login_data()
+    if not user_login_data:
+        return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner)
+
+    return render_template('free_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner, user_login_data=user_login_data)

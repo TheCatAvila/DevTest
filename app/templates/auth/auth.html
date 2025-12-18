@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Ingresar{% endblock %}
+{% block title %}Auth | DevLe{% endblock %}
 
 <!-- No mostrar el header -->
 {% block header %}{% endblock %}
@@ -80,21 +80,32 @@
         </form>
 
         <!-- Botón de Register -->
-        <a class="btn btn-main-menu" href="{{ url_for('auth_routes.register_user') }}">
-            <div class="line">
-                <span class="keyword">def</span> <span class="function-name">register</span><span
-                    class="grouping_symbols">(</span><span class="parameter">self</span><span
-                    class="grouping_symbols">)</span>:
-            </div>
-            <div class="tab">
-                <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+        <form action="/register_user" method="post">
+            <input type="hidden" name="username_register" id="username_register">
+            <input type="hidden" name="email_register" id="email_register">
+            <input type="hidden" name="password_register" id="password_register">
+            <input type="hidden" name="password_repit_register" id="password_repit_register">
+            <button type="submit" class="btn btn-main-menu" method="post">
                 <div class="line">
-                    <span class="return">return</span> <span class="function-name">render_template</span><span
-                        class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
-                        class="grouping_symbols">)</span>
+                    <span class="keyword">def</span> <span class="function-name">register</span><span
+                        class="grouping_symbols">(</span><span class="parameter">self</span><span
+                        class="grouping_symbols">)</span>:
                 </div>
-            </div>
-        </a>
+                <div class="tab">
+                    <div class="line comment">"""Esta es la descripción de la tarea."""</div>
+                    <div class="line">
+                        <div><span class="parameter">query</span> = <span class="string">"SELECT id, password FROM users
+                                WHERE email = %s"</span></div>
+                        <div><span class="parameter">values</span> = <span class="grouping_symbols">(</span><span
+                                class="parameter">self</span>.<span class="parameter">email</span>,<span
+                                class="grouping_symbols">)</span></div>
+                        <span class="return">return</span> <span class="function-name">render_template</span><span
+                            class="grouping_symbols">(</span><span class="string">'daily_tech.html'</span><span
+                            class="grouping_symbols">)</span>
+                    </div>
+                </div>
+            </button>
+        </form>
     </div>
 
 </div>
@@ -114,6 +125,16 @@ function resizeInput(input) {
     const usernameRegister = document.getElementById('username_register');
     if (usernameRegister) {
         usernameRegister.value = usernameGeneral;
+    }
+
+    const emailRegister = document.getElementById('email_register');
+    if (emailRegister) {
+        emailRegister.value = emailGeneral;
+    }
+
+    const passwordRegister = document.getElementById('password_register');
+    if (passwordRegister) {
+        passwordRegister.value =  passwordGeneral;
     }
 
     const emailLogin = document.getElementById('email_login');

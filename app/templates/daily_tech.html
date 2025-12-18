@@ -70,9 +70,9 @@
         </form>
 
         {% endif %}
-        <!-- <form action="/reset_game">
+        <form action="/reset_game">
             <input type="submit" value="Reset">
-        </form> -->
+        </form>
         <div>
             <h3>Attempts: 0</h3>
         </div>
@@ -89,14 +89,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- {% for tech in guessed_techs_data | reverse %}
+                {% for tech in guessed_techs_data | reverse %}
                 <tr>
                     {% for key in ['name', 'category', 'type', 'release_year', 'paradigm', 'company', 'uses'] %}
                     {% set data = tech.comparison[key] %}
                     <td style="color: {{ 'green' if data.match else 'red' }};">{{ data.input }}</td>
                     {% endfor %}
                 </tr>
-                {% endfor %} -->
+                {% endfor %}
     
             </tbody>
         </table>

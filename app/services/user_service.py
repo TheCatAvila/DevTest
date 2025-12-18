@@ -1,22 +1,16 @@
 import re
 
 class UserService:
-    def __init__(self, name: str = None, lastname: str = None, email: str = None, password: str = None, password_confirm: str = None):
-        self.name = name
-        self.lastname = lastname
+    def __init__(self, username: str = None, email: str = None, password: str = None, password_confirm: str = None):
+        self.username = username
         self.email = email
         self.password = password
         self.password_confirm = password_confirm
 
-    def validate_name(self):
-        """Valida solo el nombre y lanza un error si no se cumple."""
-        if not self.name or len(self.name.strip()) < 2:
-            raise ValueError("El nombre debe tener al menos 2 caracteres.")
-
-    def validate_lastname(self):
-        """Valida solo el apellido."""
-        if not self.lastname or len(self.lastname.strip()) < 2:
-            raise ValueError("El apellido debe tener al menos 2 caracteres.")
+    def validate_username(self):
+        """Valida solo el nombre de usuario y lanza un error si no se cumple."""
+        if not self.username or len(self.username.strip()) < 2:
+            raise ValueError("El nombre de usuario debe tener al menos 2 caracteres.")
 
     def validate_email(self):
         """Valida solo el email."""
@@ -37,7 +31,6 @@ class UserService:
 
     def validate_all(self):
         """Ejecuta todas las validaciones. Si alguna falla, lanza una excepción."""
-        self.validate_name()
-        self.validate_lastname()
+        self.validate_username()
         self.validate_email()
         self.validate_password()

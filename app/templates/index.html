@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Inicio{% endblock %}
+{% block title %}Home | DevLe{% endblock %}
 
 <!-- Estilos css personalizados por página -->
 {% block css %}
@@ -33,7 +33,7 @@
 
                 </a>
 
-                <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
+                <a class="btn btn-main-menu btn-blocked" href="{{ url_for('main.daily_tech') }}">
                     <div class="line">
                         <span class="keyword">def</span> <span class="function-name">daily_quizz</span>(<span
                             class="parameter">self</span>):
@@ -67,7 +67,7 @@
 
                 </a>
 
-                <a class="btn btn-main-menu" href="{{ url_for('main.daily_tech') }}">
+                <a class="btn btn-main-menu btn-blocked" href="{{ url_for('main.daily_tech') }}">
                     <div class="line">
                         <span class="keyword">def</span> <span class="function-name">free_quizz</span>(<span
                             class="parameter">self</span>):
