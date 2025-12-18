@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Daily Tech{% endblock %}
+{% block title %}Free Tech{% endblock %}
 
 <!-- Estilos css personalizados por página -->
 {% block css %}
@@ -75,6 +75,9 @@
         </form> -->
         <div>
             <h3>Attempts: 0</h3>
+            <form action="/reset_game">
+                <button type="submit">reset</button>
+            </form>
         </div>
         <table class="table text-center align-middle">
             <thead class="table-dark">
