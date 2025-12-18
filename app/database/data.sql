@@ -83,3 +83,50 @@ INSERT INTO technologies (name, category_id, type_id, release_year, paradigm_id,
 ('ElasticSearch', 5, 5, 2010, 5, 5, 5),       -- Base de datos NoSQL, búsqueda y analítica
 ('Figma', 4, 2, 2016, 2, 3, 3);               -- Herramienta de diseño, UI/UX, Meta/Comunidad, desarrollo web
 
+-- New Categories
+INSERT INTO categories (name) VALUES
+('Markup Language'),
+('Style Language'),
+('Mobile Framework'),
+('Testing Tool'),
+('CI/CD Tool');
+
+-- New Types
+INSERT INTO types (name) VALUES
+('Markup'),
+('Styling'),
+('Mobile'),
+('Testing');
+
+-- New Paradigms
+INSERT INTO paradigms (name) VALUES
+('Imperative'),
+('Event-driven');
+
+-- New Companies/Communities
+INSERT INTO companies (name) VALUES
+('W3C'),
+('JUnit Team'),
+('GitHub');
+
+-- New Uses
+INSERT INTO uses (name) VALUES
+('Web Structure'),
+('Web Styling'),
+('Mobile Development'),
+('Testing'),
+('Automation');
+
+INSERT INTO technologies 
+(name, category_id, type_id, release_year, paradigm_id, company_id, use_id)
+VALUES
+('HTML', 6, 6, 1993, 6, 6, 6),           -- Lenguaje de marcado, estructura web
+('CSS', 7, 7, 1996, 3, 6, 7),            -- Lenguaje de estilos, diseño web
+('Sass', 7, 7, 2006, 3, 6, 7),           -- Preprocesador CSS
+('Bootstrap', 3, 3, 2011, 3, 3, 3),      -- Framework CSS, desarrollo web
+('Node.js', 4, 1, 2009, 7, 5, 1),        -- Runtime JS, event-driven, backend
+('Express.js', 3, 1, 2010, 6, 5, 3),     -- Framework backend Node
+('React Native', 8, 8, 2015, 3, 3, 8),   -- Framework mobile
+('JUnit', 9, 9, 1997, 6, 7, 9),          -- Testing Java
+('Jest', 9, 9, 2014, 6, 3, 9),           -- Testing JavaScript
+('GitHub Actions', 10, 4, 2019, 4, 8, 10); -- CI/CD, automatización

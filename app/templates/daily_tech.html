@@ -70,11 +70,8 @@
         </form>
 
         {% endif %}
-        <form action="/reset_game">
-            <input type="submit" value="Reset">
-        </form>
         <div>
-            <h3>Attempts: 0</h3>
+            <h3 class="line">Attempts: {{ session.get('attempts') }}</h3>
         </div>
         <table class="table text-center align-middle">
             <thead class="table-dark">

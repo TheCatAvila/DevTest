@@ -25,6 +25,12 @@ def daily_tech():
 
     user_id = session.get("user_id")
     user_login_data = User(id=user_id).get_login_data()
+    daily_tech_data = Technology.get_random_tech()
+    if daily_tech_data:
+        tech = Technology(id=1)
+        Technology.reset_daily_tech()
+        tech.define_daily_tech()
+        print(f"La tecnología del día ha sido definida como: {tech.name}")
     if not user_login_data:
         return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner)
 
@@ -39,6 +45,12 @@ def free_tech():
 
     user_id = session.get("user_id")
     user_login_data = User(id=user_id).get_login_data()
+    daily_tech_data = Technology.get_random_tech()
+    if daily_tech_data:
+        tech = Technology(id=daily_tech_data['id'])
+        Technology.reset_daily_tech()
+        tech.define_daily_tech()
+        print(f"La tecnología del día ha sido definida como: {tech.name}")
     if not user_login_data:
         return render_template('daily_tech.html', guessed_techs_data=guessed_techs_data, attempts=attempts, user_winner=user_winner)
 

@@ -1,18 +1,10 @@
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    lastname VARCHAR(50) NOT NULL,
+    username VARCHAR(50) NOT NULL,
     email VARCHAR(120) UNIQUE NOT NULL,
     password VARCHAR(256) NOT NULL,
     register_date DATETIME NOT NULL
 );
-
-ALTER TABLE users
-ADD COLUMN username VARCHAR(50) UNIQUE NOT NULL;
-
-ALTER TABLE users
-DROP COLUMN name,
-DROP COLUMN lastname;
 
 -- Reference tables (normalized)
 CREATE TABLE categories (
